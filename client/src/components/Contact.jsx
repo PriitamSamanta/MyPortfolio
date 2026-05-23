@@ -165,17 +165,6 @@ const Contact = () => {
                             ></textarea>
                         </div>
 
-                        {status && (
-                            <p
-                                className={`mb-4 text-sm ${status.includes("successfully")
-                                    ? "text-green-400"
-                                    : "text-red-400"
-                                    }`}
-                            >
-                                {status}
-                            </p>
-                        )}
-
                         <button
                             type="submit"
                             disabled={loading}
