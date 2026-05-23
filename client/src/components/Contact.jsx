@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import axios from "axios";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ const Contact = () => {
         message: "",
     });
 
-    const [status, setStatus] = useState("");
+
     const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
@@ -25,23 +26,24 @@ const Contact = () => {
         e.preventDefault();
 
         if (!formData.name || !formData.email || !formData.message) {
-            setStatus("Please fill all fields.");
+            toast.error("Please fill all fields.");
             return;
         }
 
         if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            setStatus("Please enter a valid email address.");
+            toast.error("Please enter a valid email address.");
             return;
         }
 
         if (formData.message.length < 10) {
-            setStatus("Message must be at least 10 characters.");
+            toast.error("Message must be at least 10 characters.");
             return;
         }
 
+        const loadingToast = toast.loading("Sending message...");
+
         try {
             setLoading(true);
-            setStatus("");
 
             const res = await axios.post(
                 "https://pritamsamanta.onrender.com/api/contact",
@@ -49,7 +51,20 @@ const Contact = () => {
             );
 
             if (res.data.success) {
+                await emailjs.send(
+                    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                    {
+                        from_name: formData.name,
+                        from_email: formData.email,
+                        message: formData.message,
+                    },
+                    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+                );
+
+                toast.dismiss(loadingToast);
                 toast.success("Message sent successfully!");
+
                 setFormData({
                     name: "",
                     email: "",
@@ -57,6 +72,7 @@ const Contact = () => {
                 });
             }
         } catch (error) {
+            toast.dismiss(loadingToast);
             toast.error(
                 error.response?.data?.message || "Something went wrong. Try again."
             );
