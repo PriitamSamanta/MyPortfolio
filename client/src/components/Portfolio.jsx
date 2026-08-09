@@ -58,8 +58,8 @@ const projects = [
     title: "AI Powered Clous ERP Suiite",
     tech: ["Next.js", "NestJS", "TypeScript", "PostgreSQL"],
     image: project2,
-    github: "https://github.com/PriitamSamanta/dayFinder.git",
-    demo: "https://www.linkedin.com/posts/pritam-s506_mini-javascript-project-completed-day-ugcPost-7412129842525097984-OI0s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYQWS4Bcn_uwodS-sjZc4uY8rPJnXsXH0c",
+    github: "https://github.com/PriitamSamanta/MyPortfolio.git",
+    demo: "https://www.linkedin.com/posts/pritam-s506_amdoxtechnologies-erp-nextjs-ugcPost-7467827569556389888-mQFf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYQWS4Bcn_uwodS-sjZc4uY8rPJnXsXH0c",
   },
 ];
 
