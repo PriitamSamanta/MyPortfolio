@@ -15,7 +15,7 @@ import {
   FaBootstrap,
   FaPython,
 } from "react-icons/fa";
-import { SiMongodb, SiMysql } from "react-icons/si";
+import { SiMongodb, SiMysql, SiNextdotjs, SiExpress, SiNestjs, SiTypescript, SiPostgresql } from "react-icons/si";
 
 const getTechIcon = (tech) => {
   const icons = {
@@ -29,6 +29,11 @@ const getTechIcon = (tech) => {
     MySQL: <SiMysql className="text-blue-300" />,
     Bootstrap: <FaBootstrap className="text-purple-500" />,
     Python: <FaPython className="text-yellow-400" />,
+    "Next.js": <SiNextdotjs className="text-cyan-400" />, 
+    "Express.js": <SiExpress className="text-gray-400" />,
+    NestJS: <SiNestjs className="text-red-500" />,
+    TypeScript: <SiTypescript className="text-blue-500" />,
+    PostgreSQL: <SiPostgresql className="text-blue-500" />,
   };
 
   return icons[tech];
@@ -37,10 +42,10 @@ const getTechIcon = (tech) => {
 
 const projects = [
   {
-    title: "AI Job Portal",
-    tech: ["React", "Node.js", "MongoDB"],
+    title: "Digital Signature Web Application",
+    tech: ["Next.js","React", "Node.js","Express.js", "MongoDB"],
     image: project1,
-    github: "https://github.com/PriitamSamanta/ai-job-portal.git",
+    github: "https://github.com/PriitamSamanta/Digital-Signature-app.git",
 
   },
   {
@@ -50,8 +55,8 @@ const projects = [
     github: "https://github.com/PriitamSamanta/Web-Based-Smart-Sales-Dashboard.git",
   },
   {
-    title: "Day Finder Web Application",
-    tech: ["HTML", "CSS", "JavaScript"],
+    title: "AI Powered Clous ERP Suiite",
+    tech: ["Next.js", "NestJS", "TypeScript", "PostgreSQL"],
     image: project2,
     github: "https://github.com/PriitamSamanta/dayFinder.git",
     demo: "https://www.linkedin.com/posts/pritam-s506_mini-javascript-project-completed-day-ugcPost-7412129842525097984-OI0s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYQWS4Bcn_uwodS-sjZc4uY8rPJnXsXH0c",

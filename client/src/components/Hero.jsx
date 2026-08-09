@@ -1,10 +1,9 @@
-import { FaGithub, FaLinkedin, FaInstagram, FaDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import toast from "react-hot-toast";
 
 const socialLinks = {
   github: "https://github.com/PriitamSamanta",
   linkedin: "https://www.linkedin.com/in/pritam-s506/",
-  instagram: "https://www.instagram.com/pritam_s05/",
 };
 
 const Hero = () => {
@@ -63,10 +62,6 @@ const Hero = () => {
 
           <a href={socialLinks.linkedin} target="_blank" rel="noreferrer" className="hover:text-cyan-400">
             <FaLinkedin />
-          </a>
-
-          <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="hover:text-cyan-400">
-            <FaInstagram />
           </a>
         </div>
       </div>

@@ -1,10 +1,9 @@
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import logo from "../assets/images/logo.png";
 
 const socialLinks = {
     github: "https://github.com/PriitamSamanta",
     linkedin: "https://www.linkedin.com/in/pritam-s506/",
-    instagram: "https://www.instagram.com/pritam_s05/",
 };
 
 const Footer = () => {
@@ -44,15 +43,11 @@ const Footer = () => {
                     <a href={socialLinks.linkedin} target="_blank" rel="noreferrer" className="hover:text-cyan-400">
                         <FaLinkedin />
                     </a>
-
-                    <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="hover:text-cyan-400">
-                        <FaInstagram />
-                    </a>
                 </div>
             </div>
 
             <p className="text-center text-gray-500 text-sm mt-8">
-                © {new Date().getFullYear()} Pritam. All Rights Reserved.
+                © {new Date().getFullYear()} Created by Pritam. All Rights Reserved.
             </p>
         </footer>
     );

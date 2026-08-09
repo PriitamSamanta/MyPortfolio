@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 
 const educationData = [
     {
+        title: "Master of Computer Application(MCA)",
+        year: "2026 - 2028",
+        institute: "Dharmsinh Desai University, Nadiad",
+        description:
+            "Learning Advanced computer applications, programming, database management, and full stack web development.",
+    },
+    {
         title: "Bachelor of Computer Application(BCA)",
         year: "2023 - 2026",
         institute: "GLS University, Ahmedabad",
