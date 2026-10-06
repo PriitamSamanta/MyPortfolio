@@ -2,6 +2,8 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Education from "../components/Education";
+import Internship from "../components/Internship";
+import Certifications from "../components/Certifications";
 import Resume from "../components/Resume";
 import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
@@ -19,6 +21,8 @@ const Home = () => {
         <Hero />
         <About />
         <Education />
+        <Internship />
+        <Certifications />
         <Resume />
         <Portfolio />
         <Contact />

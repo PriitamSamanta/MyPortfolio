@@ -6,6 +6,8 @@ const navLinks = [
   { name: "HOME", id: "home" },
   { name: "ABOUT", id: "about" },
   { name: "EDUCATION", id: "education" },
+  { name: "INTERNSHIP", id: "internship" },
+  { name: "CERTIFICATIONS", id: "certifications" },
   { name: "SKILLS", id: "resume" },
   { name: "PROJECTS", id: "portfolio" },
   { name: "CONTACT", id: "contact" },
