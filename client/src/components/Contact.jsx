@@ -40,42 +40,34 @@ const Contact = () => {
             return;
         }
 
-        const loadingToast = toast.loading("Sending message...");
-
         try {
             setLoading(true);
 
-            const res = await axios.post(
-                "https://pritamsamanta.onrender.com/api/contact",
-                formData
+            // Send the email first
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    message: formData.message,
+                },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
 
-            if (res.data.success) {
-                await emailjs.send(
-                    import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                    {
-                        from_name: formData.name,
-                        from_email: formData.email,
-                        message: formData.message,
-                    },
-                    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-                );
+            // EmailJS confirmed the message was sent
+            toast.success("Message sent successfully!");
+            const submittedData = { ...formData };
+            setFormData({ name: "", email: "", message: "" });
 
-                toast.dismiss(loadingToast);
-                toast.success("Message sent successfully!");
-
-                setFormData({
-                    name: "",
-                    email: "",
-                    message: "",
+            
+            axios
+                .post("https://pritamsamanta.onrender.com/api/contact", submittedData)
+                .catch((error) => {
+                    console.error("Could not save contact message:", error);
                 });
-            }
         } catch (error) {
-            toast.dismiss(loadingToast);
-            toast.error(
-                error.response?.data?.message || "Something went wrong. Try again."
-            );
+            toast.error("Message could not be sent. Please try again.");
         } finally {
             setLoading(false);
         }

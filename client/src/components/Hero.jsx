@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 const socialLinks = {
   github: "https://github.com/PriitamSamanta",
@@ -11,12 +12,48 @@ const Hero = () => {
     toast.success("Resume downloading...");
   };
 
+  const roles = [
+    "Full Stack Developer",
+    "MERN Stack Developer",
+    "Web Developer",
+  ];
+
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [typedRole, setTypedRole] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+
+    let delay = isDeleting ? 45 : 85;
+
+    if (!isDeleting && typedRole === currentRole) {
+      delay = 1400; // pause when the full title is shown
+    } else if (isDeleting && typedRole === "") {
+      delay = 350;
+    }
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && typedRole === currentRole) {
+        setIsDeleting(true);
+      } else if (isDeleting && typedRole === "") {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      } else {
+        setTypedRole(
+          isDeleting
+            ? currentRole.slice(0, typedRole.length - 1)
+            : currentRole.slice(0, typedRole.length + 1)
+        );
+      }
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [typedRole, isDeleting, roleIndex]);
+
   return (
     <section id="home" className="min-h-screen w-full bg-[#050b18]/70 text-white flex items-center justify-center relative px-4 py-20 md:py-0">
-      {/* Background Image */}
 
-
-      {/* Content */}
       <div className="relative text-center px-6">
         <div className="mb-6">
           <p className="text-xl sm:text-2xl md:text-4xl font-medium mb-2">
@@ -30,7 +67,8 @@ const Hero = () => {
         </div>
 
         <h2 className="text-lg sm:text-xl md:text-2xl mb-6 text-gray-300">
-          Full Stack Developer
+          {typedRole}
+          <span className="animate-pulse">|</span>
         </h2>
         <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto mb-6 leading-6 md:leading-8">
           I build modern web applications using React, Node.js, Express and MongoDB.
