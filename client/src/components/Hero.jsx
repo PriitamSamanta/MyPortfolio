@@ -38,7 +38,7 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 mb-6">
           <a
-            href="/resume.pdf"
+            href="/PritamSamanta_Resume.pdf"
             download="Pritam-Samanta-Resume.pdf"
             onClick={handleResumeDownload}
             className="px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-base border border-white hover:bg-white hover:text-black transition"
