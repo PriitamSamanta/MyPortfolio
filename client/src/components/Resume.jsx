@@ -41,7 +41,7 @@ const otherSkills = [
   { name: "English", icon: "EN" },
   { name: "Hindi", icon: "HI" },
   { name: "Python", icon: <FaPython className="text-blue-400" /> },
-  {name: "TeamWork", icon: <FaHandshake className="text-yellow-400" />},
+  { name: "TeamWork", icon: <FaHandshake className="text-yellow-400" /> },
 ];
 
 const percentageSkills = [
@@ -95,10 +95,52 @@ const Resume = () => {
                 {skill.icon}
               </div>
 
-              <div
-                className={`w-20 h-20 mx-auto rounded-full border-4 ${skill.color} flex items-center justify-center text-sm font-bold mb-4`}
-              >
-                {skill.percent}%
+              <div className="relative w-20 h-20 mx-auto mb-4">
+                <svg
+                  className="w-full h-full -rotate-90"
+                  viewBox="0 0 100 100"
+                  aria-hidden="true"
+                >
+                  {/* Background ring */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    fill="none"
+                    stroke="rgba(107, 114, 128, 0.25)"
+                    strokeWidth="7"
+                  />
+
+                  {/* Animated progress ring */}
+                  <motion.circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="7"
+                    strokeLinecap="round"
+                    className={
+                      skill.name === "HTML"
+                        ? "text-red-400"
+                        : skill.name === "CSS"
+                          ? "text-blue-400"
+                          : skill.name === "JavaScript"
+                            ? "text-yellow-400"
+                            : skill.name === "Node.js"
+                              ? "text-green-400"
+                              : "text-cyan-400"
+                    }
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: skill.percent / 100 }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ duration: 1.3, ease: "easeOut" }}
+                  />
+                </svg>
+
+                <div className="absolute inset-0 flex items-center justify-center text-sm font-bold">
+                  {skill.percent}%
+                </div>
               </div>
 
               <h3 className="text-xl font-bold mb-2">{skill.name}</h3>

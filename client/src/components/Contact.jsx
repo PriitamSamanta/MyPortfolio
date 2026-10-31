@@ -60,7 +60,7 @@ const Contact = () => {
             const submittedData = { ...formData };
             setFormData({ name: "", email: "", message: "" });
 
-            
+
             axios
                 .post("https://pritamsamanta.onrender.com/api/contact", submittedData)
                 .catch((error) => {
@@ -83,7 +83,7 @@ const Contact = () => {
                     Contact Me
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Contact Info */}
                     <motion.div
                         className="border border-gray-700 rounded-2xl p-5 md:p-8 bg-[#111827]/70 backdrop-blur-sm hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] transition duration-300"
@@ -112,6 +112,8 @@ const Contact = () => {
                         </div>
                     </motion.div>
 
+
+
                     {/* Contact Form */}
                     <motion.form
                         onSubmit={handleSubmit}
@@ -121,6 +123,11 @@ const Contact = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
+                        <div className="mb-8">
+                            <p className="text-gray-300 leading-relaxed">
+                                Have a project or opportunity in mind? I’d be happy to connect.
+                            </p>
+                        </div>
                         <div className="mb-5">
                             <label className="block mb-2 text-sm">Name</label>
                             <input
