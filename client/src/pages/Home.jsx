@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Education from "../components/Education";
 import Internship from "../components/Internship";
-import Certifications from "../components/Certifications";
+// import Certifications from "../components/Certifications";
 import Resume from "../components/Resume";
 import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
@@ -22,7 +22,7 @@ const Home = () => {
         <About />
         <Education />
         <Internship />
-        <Certifications />
+        {/* <Certifications /> */}
         <Resume />
         <Portfolio />
         <Contact />

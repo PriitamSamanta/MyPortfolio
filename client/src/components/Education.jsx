@@ -33,8 +33,8 @@ const educationData = [
 
 const Education = () => {
     return (
-        <section id="education" className="min-h-screen  bg-[#050b18]/70 text-white px-6 md:px12 py-20">
-            <div className="max-w-5xl mx-auto">
+        <section id="education" className="min-h-screen  bg-[#050b18]/70 text-white px-6 md:px-12 py-20">
+            <div className="max-w-5xl mx-auto w-full md:translate-x-8">
                 <motion.h2
                     className="text-4xl font-bold text-center mb-20"
                     initial={{ opacity: 0, y: -30 }}
@@ -45,7 +45,7 @@ const Education = () => {
                     Education
                 </motion.h2>
 
-                <div className="relative">
+                <div className="relative max-w-5xl mx-auto w-full">
                     {/* Center Line */}
                     <div className="absolute left-5 top-0 h-full w-[2px] bg-gray-700">
                         <div className="w-full h-full bg-gradient-to-b from-blue-500 via-cyan-400 to-transparent"></div>

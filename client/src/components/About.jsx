@@ -7,7 +7,7 @@ const About = () => {
       id="about"
       className="min-h-screen bg-[#050b18]/70 text-white px-6 sm:px-8 md:px-12 py-20 md:py-0 flex items-center"
     >
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center md:translate-x-8">
 
         {/* Left Content */}
         <div className="max-w-md mx-auto md:max-w-xl md:mx-0 md:pl-4">
