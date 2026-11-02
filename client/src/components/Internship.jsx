@@ -51,8 +51,12 @@ const Internship = () => {
                             transition={{ duration: 0.7 }}
                         >
                             <div className="flex flex-col sm:flex-row gap-5">
-                                <div className="text-cyan-400 text-3xl">
-                                    <FaBriefcase />
+                                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2">
+                                    <img
+                                        src="/amdox-logo.jpg"
+                                        alt="Amdox Technologies logo"
+                                        className="h-full w-full object-contain"
+                                    />
                                 </div>
 
                                 <div className="flex-1">
