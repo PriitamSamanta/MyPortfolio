@@ -10,7 +10,7 @@ import {
 import project1 from "../assets/images/project1.jpg";
 import project2 from "../assets/images/project2.jpg";
 import project3 from "../assets/images/project3.jpg";
-import project4 from "../assets/images/project3.jpeg";
+import project4 from "../assets/images/project4.jpeg";
 
 const projects = [
   {
