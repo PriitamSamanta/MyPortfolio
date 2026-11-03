@@ -10,8 +10,27 @@ import {
 import project1 from "../assets/images/project1.jpg";
 import project2 from "../assets/images/project2.jpg";
 import project3 from "../assets/images/project3.jpg";
+import project4 from "../assets/images/project3.jpeg";
 
 const projects = [
+  {
+    title: "Res-Q",
+    category: "Hackathon Project",
+    description:
+      "Res-Q is an AI-powered emergency response and resource coordination platform designed to help citizens and emergency authorities detect, understand, and respond to emergencies faster.",
+    features: [
+      "Automatically detects and classifies the incident.",
+      "Identifies duplicate or related reports.",
+      "Generates an AI-powered emergency action plan.",
+    ],
+    contribution:
+      "contributed to whole backend development.",
+    tech: ["Next.js", "NestJS", "TypeScript", "MongoDB", "Gemini AI API"],
+    screenshots: [project4],
+    github: "https://github.com/PriitamSamanta/BitNBuild_Hackathon_Project-Team-CODE-CREW-.git",
+    linkedin:
+      "https://lnkd.in/p/d6-b6Win",
+  },
   {
     title: "Digital Signature Web Application",
     category: "Full-Stack Application",
@@ -170,8 +189,8 @@ const Portfolio = () => {
                     }}
                     onMouseLeave={() => setIsHovered(false)}
                     className={`relative w-[50%] shrink-0 overflow-hidden rounded-3xl border bg-[#111827]/90 shadow-xl transition-opacity duration-300 ${isActive
-                        ? "border-cyan-400 opacity-100"
-                        : "cursor-pointer border-gray-700 opacity-50"
+                      ? "border-cyan-400 opacity-100"
+                      : "cursor-pointer border-gray-700 opacity-50"
                       }`}
                   >
                     {/* Project image */}
@@ -340,8 +359,8 @@ const Portfolio = () => {
               onClick={() => setActiveProject(index)}
               aria-label={`Show project ${index + 1}`}
               className={`h-2.5 rounded-full transition-all ${activeProject === index
-                  ? "w-8 bg-cyan-400"
-                  : "w-2.5 bg-gray-600 hover:bg-gray-400"
+                ? "w-8 bg-cyan-400"
+                : "w-2.5 bg-gray-600 hover:bg-gray-400"
                 }`}
             />
           ))}
