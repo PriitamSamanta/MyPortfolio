@@ -11,7 +11,14 @@ import project1 from "../assets/images/project1.jpg";
 import project2 from "../assets/images/project2.jpg";
 import project3 from "../assets/images/project3.jpg";
 import project4 from "../assets/images/project4.jpeg";
-
+import p4ss1 from "../assets/images/p4s1.png";
+import p4ss2 from "../assets/images/p4s2.png";
+import p4ss3 from "../assets/images/p4s3.png";
+import p4ss4 from "../assets/images/p4s4.png";
+import p2ss1 from "../assets/images/p2s1.png";
+import p2ss2 from "../assets/images/p2s2.png";
+import p2ss3 from "../assets/images/p2s3.png";
+import p2ss4 from "../assets/images/p2s4.png";
 const projects = [
   {
     title: "Res-Q",
@@ -26,7 +33,7 @@ const projects = [
     contribution:
       "contributed to whole backend development.",
     tech: ["Next.js", "NestJS", "TypeScript", "MongoDB", "Gemini AI API"],
-    screenshots: [project4],
+    screenshots: [project4, p4ss1, p4ss2, p4ss3, p4ss4],
     github: "https://github.com/PriitamSamanta/BitNBuild_Hackathon_Project-Team-CODE-CREW-.git",
     linkedin:
       "https://lnkd.in/p/d6-b6Win",
@@ -79,7 +86,7 @@ const projects = [
     contribution:
       "Demo text: contributed to module development and the application interface.",
     tech: ["Next.js", "NestJS", "TypeScript", "PostgreSQL"],
-    screenshots: [project2],
+    screenshots: [project2, p2ss1, p2ss2, p2ss3, p2ss4],
     github: "https://github.com/PriitamSamanta/MyPortfolio.git",
     linkedin:
       "https://www.linkedin.com/posts/pritam-s506_amdoxtechnologies-erp-nextjs-ugcPost-7467827569556389888-mQFf/",
