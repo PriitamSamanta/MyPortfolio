@@ -191,9 +191,6 @@ const Portfolio = () => {
                     onClick={() => {
                       if (!isActive) setActiveProject(index);
                     }}
-                    onMouseEnter={() => {
-                      if (isActive) setIsHovered(true);
-                    }}
                     onMouseLeave={() => setIsHovered(false)}
                     className={`relative w-[50%] shrink-0 overflow-hidden rounded-3xl border bg-[#111827]/90 shadow-xl transition-opacity duration-300 ${isActive
                       ? "border-cyan-400 opacity-100"
@@ -222,6 +219,20 @@ const Portfolio = () => {
                           {item.title}
                         </h3>
                       </div>
+
+                      {isActive && (
+                        <button
+                          type="button"
+                          onMouseEnter={() => setIsHovered(true)}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            setIsHovered((current) => !current);
+                          }}
+                          className="absolute right-5 top-5 z-10 rounded-lg border border-cyan-400 bg-[#07111f]/90 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-[#07111f]"
+                        >
+                          View Details
+                        </button>
+                      )}
 
                       {isActive &&
                         item.screenshots.length > 1 &&
